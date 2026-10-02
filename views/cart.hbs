@@ -1,0 +1,206 @@
+<section class="cart-section py-5">
+  <div class="container">
+
+    <!-- Cart Header -->
+    <div class="cart-header rounded-4 p-4 p-md-5 mb-4">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3">
+
+        <div>
+          <span class="cart-label">SHOPPING CART</span>
+          <h2 class="mb-2">Your Cart</h2>
+          <p class="mb-0">
+            Review your items before placing your order.
+          </p>
+        </div>
+
+        {{#if products.length}}
+        <div class="cart-count">
+          {{products.length}} Items
+        </div>
+        {{/if}}
+
+      </div>
+    </div>
+
+
+    {{#if products.length}}
+
+    <!-- Cart Card -->
+    <div class="cart-card rounded-4 overflow-hidden">
+
+      <!-- Table Header -->
+      <div class="cart-table-header">
+        <div>PRODUCT</div>
+        <div>PRICE</div>
+        <div>QUANTITY</div>
+        <div>TOTAL</div>
+        <div></div>
+      </div>
+
+
+      <!-- Products -->
+      {{#each products}}
+      <div class="cart-item">
+
+        <!-- Product -->
+        <div class="product-info">
+
+          <div class="product-image rounded-3">
+            <img
+              src="/product-images/{{this._id}}.jpg"
+              alt="{{this.name}}"
+              class="img-fluid"
+            />
+          </div>
+
+          <div class="product-details">
+            <h5>{{this.name}}</h5>
+            <span>Product</span>
+          </div>
+
+        </div>
+
+
+        <!-- Price -->
+        <div class="product-price">
+          ₹{{this.unitPrice}}
+        </div>
+
+
+        <!-- Quantity -->
+        <div class="quantity-wrapper">
+
+          <button
+            type="button"
+            onclick="changeQuantity('{{this._id}}', -1)"
+            class="btn"
+          >
+            −
+          </button>
+
+          <span>{{this.quantity}}</span>
+
+          <button
+            type="button"
+            onclick="changeQuantity('{{this._id}}', 1)"
+            class="btn"
+          >
+            +
+          </button>
+
+        </div>
+
+
+        <!-- Total -->
+        <div class="product-total">
+          ₹{{this.lineTotal}}
+        </div>
+
+
+        <!-- Remove -->
+        <div class="remove-wrapper">
+
+          <button
+            type="button"
+            class="btn remove-btn"
+            onclick="removeFromCart('{{this._id}}')"
+          >
+            Remove
+          </button>
+
+        </div>
+
+      </div>
+      {{/each}}
+
+    </div>
+
+
+    <!-- Bottom Area -->
+    <div class="row g-4 mt-2">
+
+      <!-- Continue Shopping -->
+      <div class="col-lg-7">
+        <a
+          href="/Shop"
+          class="continue-shopping d-inline-flex align-items-center"
+        >
+          <span class="me-2">←</span>
+          Continue Shopping
+        </a>
+      </div>
+
+
+      <!-- Order Summary -->
+      <div class="col-lg-5">
+
+        <div class="cart-summary rounded-4 p-4">
+
+          <h4 class="summary-title mb-4">
+            Order Summary
+          </h4>
+
+          <div class="summary-row">
+            <span>Subtotal</span>
+            <strong>₹{{total}}</strong>
+          </div>
+
+          <div class="summary-row">
+            <span>Delivery</span>
+            <span class="delivery-text">
+              Calculated at checkout
+            </span>
+          </div>
+
+          <hr class="summary-divider">
+
+          <div class="summary-total">
+            <span>Total</span>
+            <strong><span id="total">₹{{totalValue}}<span></strong>
+          </div>
+
+          <a
+            href="/mid"
+            class="btn checkout-btn w-100 py-3"
+          >
+            <span>Proceed to Checkout</span>
+            <span>→</span>
+          </a>
+
+        </div>
+
+      </div>
+
+    </div>
+
+
+    {{else}}
+
+    <!-- Empty Cart -->
+    <div class="empty-cart rounded-4 p-5 text-center">
+
+      <div class="empty-cart-icon mx-auto mb-4">
+        🛒
+      </div>
+
+      <h3 class="mb-2">
+        Your cart is empty.
+      </h3>
+
+      <p class="mb-4">
+        Looks like you haven't added anything to your cart yet.
+      </p>
+
+      <a
+        href="/Shop"
+        class="btn shop-btn px-4 py-3"
+      >
+        Continue Shopping
+      </a>
+
+    </div>
+
+    {{/if}}
+
+  </div>
+</section>

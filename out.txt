@@ -1,0 +1,46 @@
+Trying MongoDB connection...
+MONGO CONNECTED!
+connected
+databse Connected
+MiddleWare User: undefined
+[0mGET /mid [32m200[0m 21.042 ms - 4289[0m
+MiddleWare User: undefined
+[0mGET / [32m200[0m 11.720 ms - 26334[0m
+MiddleWare User: undefined
+[0mGET /Shop [32m200[0m 8.310 ms - 7746[0m
+MiddleWare User: undefined
+[0mGET /mid [32m200[0m 17.091 ms - 4289[0m
+[0mGET /stylesheets/style.css [36m304[0m 3.268 ms - -[0m
+[0mGET /javascripts/index.js [36m304[0m 5.162 ms - -[0m
+MiddleWare User: undefined
+[0mGET /mid [36m304[0m 12.372 ms - -[0m
+[0mGET /stylesheets/style.css [36m304[0m 1.005 ms - -[0m
+[0mGET /javascripts/index.js [36m304[0m 1.605 ms - -[0m
+MiddleWare User: undefined
+[0mGET /mid [36m304[0m 15.104 ms - -[0m
+[0mGET /stylesheets/style.css [36m304[0m 0.579 ms - -[0m
+[0mGET /javascripts/index.js [36m304[0m 0.988 ms - -[0m
+MiddleWare User: undefined
+[0mGET /mid [36m304[0m 7.180 ms - -[0m
+[0mGET /stylesheets/style.css [36m304[0m 0.565 ms - -[0m
+[0mGET /javascripts/index.js [36m304[0m 1.411 ms - -[0m
+MiddleWare User: undefined
+[0mGET /mid [36m304[0m 6.700 ms - -[0m
+[0mGET /stylesheets/style.css [36m304[0m 0.720 ms - -[0m
+[0mGET /javascripts/index.js [36m304[0m 1.242 ms - -[0m
+MiddleWare User: undefined
+[0mGET /mid [36m304[0m 9.143 ms - -[0m
+[0mGET /stylesheets/style.css [36m304[0m 0.655 ms - -[0m
+[0mGET /javascripts/index.js [36m304[0m 0.988 ms - -[0m
+MiddleWare User: undefined
+[0mGET /mid [36m304[0m 11.764 ms - -[0m
+[0mGET /stylesheets/style.css [36m304[0m 0.773 ms - -[0m
+[0mGET /javascripts/index.js [36m304[0m 0.986 ms - -[0m
+MiddleWare User: undefined
+[0mGET /mid [36m304[0m 10.643 ms - -[0m
+[0mGET /stylesheets/style.css [36m304[0m 0.532 ms - -[0m
+[0mGET /javascripts/index.js [36m304[0m 0.857 ms - -[0m
+MiddleWare User: undefined
+[0mGET /mid [32m200[0m 12.446 ms - 18712[0m
+[0mGET /javascripts/index.js [36m304[0m 0.915 ms - -[0m
+[0mGET /stylesheets/style.css [32m200[0m 2.353 ms - 43189[0m

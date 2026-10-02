@@ -1,0 +1,919 @@
+
+<!-- Bootstrap 5 -->
+<link
+  href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+  rel="stylesheet"
+>
+
+<!-- Bootstrap Icons -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+>
+
+<style>
+  :root {
+    --blue: #1264e8;
+    --dark: #101828;
+    --muted: #667085;
+    --border: #e5eaf1;
+    --light-blue: #eef5ff;
+    --orange: #ff8a3d;
+  }
+
+  body {
+    background: #ffffff;
+    color: var(--dark);
+  }
+
+  /* =========================
+     SECTION
+  ========================= */
+
+  .showcase-section {
+    padding: 70px 0 50px;
+  }
+
+  .section-title {
+    font-size: 32px;
+    font-weight: 700;
+    letter-spacing: -1px;
+  }
+
+  .section-line {
+    width: 45px;
+    height: 4px;
+    background: var(--blue);
+    border-radius: 10px;
+    margin: 12px 0 18px;
+  }
+
+  .section-description {
+    color: var(--muted);
+    line-height: 1.7;
+  }
+
+  /* =========================
+     CATEGORY FILTER
+  ========================= */
+
+  .category-filter {
+    border: 1px solid var(--border);
+    border-radius: 50px;
+    padding: 5px;
+    display: flex;
+    overflow-x: auto;
+    white-space: nowrap;
+    background: #fff;
+  }
+
+  .category-filter::-webkit-scrollbar {
+    display: none;
+  }
+
+  .category-btn {
+    border: none;
+    background: transparent;
+    padding: 10px 18px;
+    border-radius: 40px;
+    color: #475467;
+    font-size: 14px;
+    font-weight: 500;
+    transition: 0.2s;
+  }
+
+  .category-btn:hover {
+    color: var(--blue);
+    background: var(--light-blue);
+  }
+
+  .category-btn.active {
+    background: var(--blue);
+    color: #fff;
+  }
+
+  /* =========================
+     PRODUCT CARD
+  ========================= */
+
+  .product-card {
+    border: 1px solid var(--border);
+    border-radius: 16px;
+    overflow: hidden;
+    background: #fff;
+    height: 100%;
+    transition: 0.25s ease;
+  }
+
+  .product-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 30px rgba(16, 24, 40, 0.08);
+    border-color: #cdddf8;
+  }
+
+  .product-img-wrapper {
+    height: 180px;
+    background: #f7f9fc;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+  }
+
+  .product-img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    transition: 0.25s;
+  }
+
+  .product-card:hover .product-img {
+    transform: scale(1.05);
+  }
+
+  .product-body {
+    padding: 18px;
+  }
+
+  .product-name {
+    font-size: 15px;
+    font-weight: 600;
+    margin-bottom: 8px;
+  }
+
+  .product-category {
+    color: var(--muted);
+    font-size: 12px;
+  }
+
+  .product-price {
+    font-size: 18px;
+    font-weight: 700;
+    color: var(--dark);
+  }
+
+  .cart-btn {
+    width: 38px;
+    height: 38px;
+    border-radius: 50%;
+    border: 1px solid #cbd8ec;
+    background: #fff;
+    color: var(--blue);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+  }
+
+  .cart-btn:hover {
+    background: var(--blue);
+    color: #fff;
+    border-color: var(--blue);
+  }
+
+  /* =========================
+     OFFER SECTION
+  ========================= */
+
+  .offers-section {
+    padding: 55px 0 70px;
+    background: #f8faff;
+  }
+
+  .offer-card {
+    min-height: 210px;
+    border-radius: 18px;
+    padding: 30px;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid var(--border);
+  }
+
+  .offer-blue {
+    background: linear-gradient(
+      135deg,
+      #edf5ff,
+      #ffffff
+    );
+  }
+
+  .offer-orange {
+    background: linear-gradient(
+      135deg,
+      #fff4eb,
+      #ffffff
+    );
+  }
+
+  .offer-title {
+    font-size: 30px;
+    font-weight: 800;
+    letter-spacing: -1px;
+  }
+
+  .offer-blue .offer-title {
+    color: var(--blue);
+  }
+
+  .offer-orange .offer-title {
+    color: var(--orange);
+  }
+
+  .offer-small {
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    color: var(--muted);
+  }
+
+  .offer-text {
+    color: #475467;
+    font-size: 14px;
+  }
+
+  .offer-icon {
+    position: absolute;
+    right: 25px;
+    bottom: 20px;
+    font-size: 90px;
+    opacity: 0.12;
+  }
+
+  .offer-btn {
+    border-radius: 8px;
+    font-weight: 600;
+    padding: 9px 18px;
+  }
+
+  /* =========================
+     MOBILE
+  ========================= */
+
+  @media (max-width: 768px) {
+
+    .showcase-section {
+      padding: 45px 0 35px;
+    }
+
+    .section-title {
+      font-size: 26px;
+    }
+
+    .category-filter {
+      border-radius: 12px;
+      margin-top: 20px;
+    }
+
+    .product-img-wrapper {
+      height: 150px;
+    }
+
+    .product-body {
+      padding: 14px;
+    }
+
+    .offer-card {
+      min-height: 190px;
+      padding: 24px;
+    }
+
+    .offer-title {
+      font-size: 25px;
+    }
+
+    .offer-icon {
+      font-size: 70px;
+    }
+  }
+</style>
+
+
+<!-- =====================================================
+     SHOWCASE
+===================================================== -->
+
+<section class="showcase-section">
+
+  <div class="container">
+
+    <div class="row g-4 align-items-start">
+
+      <!-- LEFT INTRO -->
+
+      <div class="col-lg-3">
+
+        <h2 class="section-title">
+          Showcase
+        </h2>
+
+        <div class="section-line"></div>
+
+        <p class="section-description">
+          Explore our handpicked components,
+          best sellers and useful electronics.
+        </p>
+
+        <a
+          href="/shop"
+          class="btn btn-primary px-4 py-2 mt-2"
+        >
+          View All Products
+          <i class="bi bi-arrow-right ms-2"></i>
+        </a>
+
+      </div>
+
+
+      <!-- RIGHT PRODUCTS -->
+
+      <div class="col-lg-9">
+
+        <!-- CATEGORY FILTER -->
+
+        <div class="category-filter mb-4">
+
+          <button class="category-btn active">
+            <i class="bi bi-grid me-1"></i>
+            All
+          </button>
+
+          <button class="category-btn">
+            <i class="bi bi-cpu me-1"></i>
+            Microcontrollers
+          </button>
+
+          <button class="category-btn">
+            <i class="bi bi-broadcast me-1"></i>
+            Sensors
+          </button>
+
+          <button class="category-btn">
+            <i class="bi bi-puzzle me-1"></i>
+            Modules
+          </button>
+
+          <button class="category-btn">
+            <i class="bi bi-lightning-charge me-1"></i>
+            Power
+          </button>
+
+          <button class="category-btn">
+            <i class="bi bi-tools me-1"></i>
+            Tools
+          </button>
+
+        </div>
+
+
+        <!-- PRODUCT CAROUSEL -->
+
+        <div
+          id="showcaseCarousel"
+          class="carousel slide"
+          data-bs-ride="carousel"
+        >
+
+          <div class="carousel-inner">
+
+
+            <!-- SLIDE 1 -->
+
+            <div class="carousel-item active">
+
+              <div class="row g-3">
+
+
+                <!-- PRODUCT 1 -->
+
+                <div class="col-6 col-md-4 col-xl-3">
+
+                  <div class="product-card">
+
+                    <div class="product-img-wrapper">
+
+                      <img
+                        src="https://images.unsplash.com/photo-1553406830-ef2513450d76?auto=format&fit=crop&w=500&q=80"
+                        class="product-img"
+                        alt="Arduino board"
+                      >
+
+                    </div>
+
+                    <div class="product-body">
+
+                      <div class="product-category">
+                        Microcontroller
+                      </div>
+
+                      <div class="product-name">
+                        Arduino Uno R3
+                      </div>
+
+                      <div
+                        class="d-flex justify-content-between align-items-center mt-3"
+                      >
+
+                        <span class="product-price">
+                          ₹599
+                        </span>
+
+                        <button class="cart-btn">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <!-- PRODUCT 2 -->
+
+                <div class="col-6 col-md-4 col-xl-3">
+
+                  <div class="product-card">
+
+                    <div class="product-img-wrapper">
+
+                      <img
+                        src="https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?auto=format&fit=crop&w=500&q=80"
+                        class="product-img"
+                        alt="Electronics development board"
+                      >
+
+                    </div>
+
+                    <div class="product-body">
+
+                      <div class="product-category">
+                        Development Board
+                      </div>
+
+                      <div class="product-name">
+                        ESP32 DevKit
+                      </div>
+
+                      <div
+                        class="d-flex justify-content-between align-items-center mt-3"
+                      >
+
+                        <span class="product-price">
+                          ₹499
+                        </span>
+
+                        <button class="cart-btn">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <!-- PRODUCT 3 -->
+
+                <div class="col-6 col-md-4 col-xl-3">
+
+                  <div class="product-card">
+
+                    <div class="product-img-wrapper">
+
+                      <img
+                        src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=500&q=80"
+                        class="product-img"
+                        alt="Electronics components"
+                      >
+
+                    </div>
+
+                    <div class="product-body">
+
+                      <div class="product-category">
+                        Electronics
+                      </div>
+
+                      <div class="product-name">
+                        Sensor Module
+                      </div>
+
+                      <div
+                        class="d-flex justify-content-between align-items-center mt-3"
+                      >
+
+                        <span class="product-price">
+                          ₹149
+                        </span>
+
+                        <button class="cart-btn">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+
+                <!-- PRODUCT 4 -->
+
+                <div class="col-6 col-md-4 col-xl-3">
+
+                  <div class="product-card">
+
+                    <div class="product-img-wrapper">
+
+                      <img
+                        src="https://images.unsplash.com/photo-1626430335144-9f9a8e2b8c1b?auto=format&fit=crop&w=500&q=80"
+                        class="product-img"
+                        alt="Battery"
+                      >
+
+                    </div>
+
+                    <div class="product-body">
+
+                      <div class="product-category">
+                        Power
+                      </div>
+
+                      <div class="product-name">
+                        18650 Li-ion Battery
+                      </div>
+
+                      <div
+                        class="d-flex justify-content-between align-items-center mt-3"
+                      >
+
+                        <span class="product-price">
+                          ₹199
+                        </span>
+
+                        <button class="cart-btn">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <!-- SLIDE 2 -->
+
+            <div class="carousel-item">
+
+              <div class="row g-3">
+
+                <div class="col-6 col-md-4 col-xl-3">
+
+                  <div class="product-card">
+
+                    <div class="product-img-wrapper">
+
+                      <img
+                        src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?auto=format&fit=crop&w=500&q=80"
+                        class="product-img"
+                        alt="OLED display"
+                      >
+
+                    </div>
+
+                    <div class="product-body">
+
+                      <div class="product-category">
+                        Display
+                      </div>
+
+                      <div class="product-name">
+                        OLED Display
+                      </div>
+
+                      <div
+                        class="d-flex justify-content-between align-items-center mt-3"
+                      >
+
+                        <span class="product-price">
+                          ₹149
+                        </span>
+
+                        <button class="cart-btn">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+                <div class="col-6 col-md-4 col-xl-3">
+
+                  <div class="product-card">
+
+                    <div class="product-img-wrapper">
+
+                      <img
+                        src="https://images.unsplash.com/photo-1581092160562-40aa08e78837?auto=format&fit=crop&w=500&q=80"
+                        class="product-img"
+                        alt="Circuit board"
+                      >
+
+                    </div>
+
+                    <div class="product-body">
+
+                      <div class="product-category">
+                        Module
+                      </div>
+
+                      <div class="product-name">
+                        Relay Module
+                      </div>
+
+                      <div
+                        class="d-flex justify-content-between align-items-center mt-3"
+                      >
+
+                        <span class="product-price">
+                          ₹89
+                        </span>
+
+                        <button class="cart-btn">
+                          <i class="bi bi-cart-plus"></i>
+                        </button>
+
+                      </div>
+
+                    </div>
+
+                  </div>
+
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <!-- CONTROLS -->
+
+          <button
+            class="carousel-control-prev"
+            type="button"
+            data-bs-target="#showcaseCarousel"
+            data-bs-slide="prev"
+          >
+            <span
+              class="carousel-control-prev-icon bg-primary rounded-circle p-3"
+            ></span>
+          </button>
+
+          <button
+            class="carousel-control-next"
+            type="button"
+            data-bs-target="#showcaseCarousel"
+            data-bs-slide="next"
+          >
+            <span
+              class="carousel-control-next-icon bg-primary rounded-circle p-3"
+            ></span>
+          </button>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- =====================================================
+     OFFERS
+===================================================== -->
+
+<section class="offers-section">
+
+  <div class="container">
+
+    <div class="row g-4 align-items-center">
+
+      <!-- OFFER INTRO -->
+
+      <div class="col-lg-3">
+
+        <h2 class="section-title">
+          Offers
+        </h2>
+
+        <div class="section-line"></div>
+
+        <p class="section-description">
+          Grab the best deals on your
+          favorite electronics.
+        </p>
+
+        <a
+          href="/showcase"
+          class="btn btn-primary px-4"
+        >
+          View All Offers
+          <i class="bi bi-arrow-right ms-2"></i>
+        </a>
+
+      </div>
+
+
+      <!-- OFFER 1 -->
+
+      <div class="col-md-6 col-lg-3">
+
+        <div class="offer-card offer-blue">
+
+          <div class="offer-small">
+            FLAT
+          </div>
+
+          <div class="offer-title">
+            10% OFF
+          </div>
+
+          <p class="offer-text">
+            On orders above ₹999
+          </p>
+
+          <button
+            class="btn btn-outline-primary offer-btn"
+          >
+            Use Code: KNOT10
+          </button>
+
+          <i
+            class="bi bi-percent offer-icon text-primary"
+          ></i>
+
+        </div>
+
+      </div>
+
+
+      <!-- OFFER 2 -->
+
+      <div class="col-md-6 col-lg-3">
+
+        <div class="offer-card offer-orange">
+
+          <div class="offer-small">
+            ELECTRONICS
+          </div>
+
+          <div class="offer-title">
+            SALE
+          </div>
+
+          <p class="offer-text">
+            Selected components up to 30% off.
+          </p>
+
+          <a
+            href="/shop?offer=sale"
+            class="btn btn-warning offer-btn text-white"
+          >
+            Shop Now
+          </a>
+
+          <i
+            class="bi bi-lightning-charge offer-icon"
+          ></i>
+
+        </div>
+
+      </div>
+
+
+      <!-- OFFER 3 -->
+
+      <div class="col-md-6 col-lg-3">
+
+        <div class="offer-card offer-blue">
+
+          <div class="offer-small">
+            FREE
+          </div>
+
+          <div class="offer-title">
+            SHIPPING
+          </div>
+
+          <p class="offer-text">
+            On orders above ₹499
+          </p>
+
+          <a
+            href="/shop"
+            class="btn btn-primary offer-btn"
+          >
+            Shop Now
+          </a>
+
+          <i
+            class="bi bi-truck offer-icon text-primary"
+          ></i>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- Bootstrap JS -->
+
+<script
+  src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js">
+</script>
+
+
+<script>
+
+  /* Category buttons */
+
+  document.querySelectorAll(".category-btn")
+    .forEach(button => {
+
+      button.addEventListener("click", function () {
+
+        document
+          .querySelectorAll(".category-btn")
+          .forEach(btn =>
+            btn.classList.remove("active")
+          );
+
+        this.classList.add("active");
+
+      });
+
+    });
+
+
+  /* Product cart buttons */
+
+  document.querySelectorAll(".cart-btn")
+    .forEach(button => {
+
+      button.addEventListener("click", function () {
+
+        const icon = this.querySelector("i");
+
+        icon.classList.remove("bi-cart-plus");
+
+        icon.classList.add("bi-check-lg");
+
+        this.classList.add("bg-primary", "text-white");
+
+        setTimeout(() => {
+
+          icon.classList.remove("bi-check-lg");
+
+          icon.classList.add("bi-cart-plus");
+
+          this.classList.remove(
+            "bg-primary",
+            "text-white"
+          );
+
+        }, 1200);
+
+      });
+
+    });
+
+</script>
+

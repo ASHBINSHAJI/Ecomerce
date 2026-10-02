@@ -1,0 +1,105 @@
+<header>
+  <nav class="navbar navbar-expand-lg navbar-light shadow-sm sticky-top py-3">
+    <div class="container">
+      <a href="images\np.png "></a>
+      <!-- Logo -->
+
+      <a class="navbar-brand d-flex me-4" href="#">
+
+        <img
+          src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsMUn-johQjW1nh6HXKSR-BzX7KXgYEByf7LaeXvlufg&s=10"
+          alt=""
+          width="45"
+          height="45"
+          class="me-2 rounded-circle"
+        />
+
+      </a>
+      <a class="navbar-brand fw-bold fs-3 text-dark" href="#">
+        Next
+        <span class="text-primary">phase</span>
+      </a>
+
+      <!-- Mobile Toggle -->
+      
+      <button
+        class="navbar-toggler border-0 shadow-none"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbar"
+      >
+
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbar">
+
+        <!-- Menu -->
+        <ul class="navbar-nav mx-auto mb-3 mb-lg-0">
+
+          <li class="nav-item">
+            <a class="nav-link active px-3" href="/">Home</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link px-3" href="/Shop">Shop</a>
+          </li>
+
+          <li class="nav-item">
+            <a class="nav-link px-3" href="/Return">Report & Return</a>
+          </li>
+
+            <li class="nav-item">
+            <a class="nav-link px-3" href="/showcase">ShowCase & Offers</a>
+          </li>
+
+        </ul>
+
+        <!-- Search -->
+        <form class="d-flex me-lg-3 my-3 my-lg-0">
+          <div class="input-group">
+            <input
+              type="search"
+              class="form-control"
+              placeholder="Search products..."
+            />
+
+            <button class="btn btn-primary">
+              <i class="bi bi-search"></i>
+            </button>
+          </div>
+        </form> 
+
+        <!-- Right Side -->
+        <div class="d-flex align-items-center gap-2">
+
+          <a class="btn btn-outline-dark position-relative" href="/cart" aria-label="View cart">
+            <span class="badge bg-danger" id="cart-count">{{Cartcount}}</span>
+            <i class="bi bi-cart3"></i>
+          </a>
+<div class="dropdown">
+          {{!-- <button class="btn btn-primary" href="/home"> --}}
+           <button class="btn btn-primary drop down-toggle" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+            {{#if user}}
+            {{user.firstName}}
+            {{else}}
+            Account
+            {{/if}}
+      
+          </button>
+          <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+            {{#if user}}
+            <a class="dropdown-item" href="/">Profile</a>
+            <a class="dropdown-item" href="/logout">Logout</a>
+            {{else}}
+            <a class="dropdown-item" href="/home">Login</a>
+            {{/if}}
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+    </div>
+  </nav>
+</header>

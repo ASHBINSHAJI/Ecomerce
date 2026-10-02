@@ -1,0 +1,759 @@
+﻿﻿<section class="checkout-page">
+
+  <!-- ================= CHECKOUT HEADER ================= -->
+  <div class="checkout-header">
+    <div class="checkout-container">
+      <h1>Checkout</h1>
+      <p>Complete your delivery and payment details</p>
+    </div>
+  </div>
+
+
+<div class="container">
+  <div class="products">
+
+
+</div>
+</div>
+
+  <div class="checkout-container">
+
+    <form action="/mid/place-order" method="POST" id="checkout">
+
+      <div class="checkout-grid">
+
+        <!-- =================================================
+             LEFT SIDE
+        ================================================== -->
+        <div class="checkout-main">
+
+
+
+          <div class="checkout-card">
+
+            <div class="checkout-card-header">
+              <div class="step-number">1</div>
+
+              <div>
+                <h2>Delivery Details</h2>
+                <p>Where should we deliver your order?</p>
+              </div>
+            </div>
+
+
+            <div class="form-row">
+
+              <div class="form-group">
+                <label for="firstName">First Name</label>
+
+                <input
+                  type="text"
+                  id="firstName"
+                  name="firstName"
+                  placeholder="Enter first name"
+                  required
+                >
+              </div>
+
+
+              <div class="form-group">
+                <label for="lastName">Last Name</label>
+
+                <input
+                  type="text"
+                  id="lastName"
+                  name="lastName"
+                  placeholder="Enter last name"
+                  required
+                >
+              </div>
+
+            </div>
+
+
+            <div class="form-row">
+
+              <div class="form-group">
+                <label for="email">Email Address</label>
+
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  placeholder="example@email.com"
+                  required
+                >
+              </div>
+
+
+              <div class="form-group">
+                <label for="phone">Phone Number</label>
+
+                <input
+                  type="tel"
+                  id="phone"
+                  name="phone"
+                  placeholder="+91 XXXXX XXXXX"
+                  required
+                >
+              </div>
+
+            </div>
+
+
+            <div class="form-group">
+              <label for="address">Address</label>
+
+              <input
+                type="text"
+                id="address"
+                name="address"
+                placeholder="House number, street name"
+                required
+              >
+            </div>
+
+
+            <div class="form-group">
+              <label for="apartment">
+                Apartment, Suite, etc.
+                <span>(Optional)</span>
+              </label>
+
+              <input
+                type="text"
+                id="apartment"
+                name="apartment"
+                placeholder="Apartment / Floor / Building"
+              >
+            </div>
+
+
+            <div class="form-row three-columns">
+
+              <div class="form-group">
+
+                <label for="country">Country</label>
+
+                <select id="country" name="country" required>
+                  <option value="">Select country</option>
+                  <option value="India">India</option>
+                  <option value="USA">United States</option>
+                  <option value="UK">United Kingdom</option>
+                  <option value="Canada">Canada</option>
+                  <option value="Australia">Australia</option>
+                </select>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="state">State</label>
+
+                <input
+                  type="text"
+                  id="state"
+                  name="state"
+                  placeholder="State"
+                  required
+                >
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label for="pincode">PIN Code</label>
+
+                <input
+                  type="text"
+                  id="pincode"
+                  name="pincode"
+                  placeholder="PIN Code"
+                  required
+                >
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- ================= DELIVERY METHOD ================= -->
+
+          <div class="checkout-card">
+
+            <div class="checkout-card-header">
+
+              <div class="step-number">2</div>
+
+              <div>
+                <h2>Delivery Method</h2>
+                <p>Select your preferred delivery option</p>
+              </div>
+
+            </div>
+
+
+            <label class="delivery-option">
+
+              <input
+                type="radio"
+                name="deliveryOption"
+                value="standard"
+                id="standerd"
+                onchange="selectDelivery(this.value)"
+                checked
+              >
+
+              <div class="delivery-info">
+
+                <strong>Standard Delivery</strong>
+
+                <span>
+                  3–5 business days
+                </span>
+
+              </div>
+
+<strong id="deliveryCharge">₹200</strong>
+
+            </label>
+
+
+            <label class="delivery-option">
+
+              <input
+                type="radio"
+                name="deliveryOption"
+                value="express"
+                id="express"
+                 onchange="selectDelivery(this.value)"
+              >
+
+              <div class="delivery-info">
+
+                <strong>Express Delivery</strong>
+
+                <span>
+                  1–2 business days
+                </span>
+
+              </div>
+
+              <strong id="expressPrice">₹150</strong>
+
+            </label>
+
+          </div>
+
+
+
+          <!-- ================= PAYMENT ================= -->
+
+          <div class="checkout-card">
+
+            <div class="checkout-card-header">
+
+              <div class="step-number">3</div>
+
+              <div>
+                <h2>Payment Method</h2>
+                <p>Select how you want to pay</p>
+              </div>
+
+            </div>
+
+
+            <!-- CARD -->
+
+            <label class="payment-option">
+
+              <input
+                type="radio"
+                name="paymentMethod"
+                value="card"
+                checked
+                onclick="showPayment('card')"
+              >
+
+              <div class="payment-content">
+
+                <div>
+                  <strong>Credit / Debit Card</strong>
+
+                  <span>
+                    Visa, Mastercard, RuPay
+                  </span>
+                </div>
+
+                <div class="payment-icons">
+                  💳
+                </div>
+
+              </div>
+
+            </label>
+
+
+            <div id="cardPayment" class="payment-details">
+
+              <div class="form-group">
+
+                <label>Card Number</label>
+
+                <input
+                  type="text"
+                  name="cardNumber"
+                  placeholder="1234 5678 9012 3456"
+                  maxlength="19"
+                >
+
+              </div>
+
+
+              <div class="form-row">
+
+                <div class="form-group">
+
+                  <label>Expiry Date</label>
+
+                  <input
+                    type="text"
+                    name="expiry"
+                    placeholder="MM / YY"
+                  >
+
+                </div>
+
+
+                <div class="form-group">
+
+                  <label>CVV</label>
+
+                  <input
+                    type="password"
+                    name="cvv"
+                    placeholder="•••"
+                    maxlength="4"
+                  >
+
+                </div>
+
+              </div>
+
+
+              <div class="form-group">
+
+                <label>Name on Card</label>
+
+                <input
+                  type="text"
+                  name="cardName"
+                  placeholder="Name on card"
+                >
+
+              </div>
+
+            </div>
+
+
+
+            <!-- UPI -->
+
+            <label class="payment-option">
+
+              <input
+                type="radio"
+                name="paymentMethod"
+                value="upi"
+                onclick="showPayment('upi')"
+              >
+
+              <div class="payment-content">
+
+                <div>
+                  <strong>UPI</strong>
+
+                  <span>
+                    Google Pay, PhonePe, Paytm, BHIM
+                  </span>
+                </div>
+
+                <div class="payment-icons">
+                  📱
+                </div>
+
+              </div>
+
+            </label>
+
+
+            <div id="upiPayment" class="payment-details">
+
+              <div class="form-group">
+
+                <label>UPI ID</label>
+
+                <input
+                  type="text"
+                  name="upiId"
+                  placeholder="example@upi"
+                >
+
+              </div>
+
+            </div>
+
+
+
+            <!-- COD -->
+
+            <label class="payment-option">
+
+              <input
+                type="radio"
+                name="paymentMethod"
+                value="cod"
+                onclick="showPayment('cod')"
+              >
+
+              <div class="payment-content">
+
+                <div>
+                  <strong>Cash on Delivery</strong>
+
+                  <span>
+                    Pay when your order arrives
+                  </span>
+                </div>
+
+                <div class="payment-icons">
+                  💵
+                </div>
+
+              </div>
+
+            </label>
+
+
+            <div id="codPayment" class="payment-details">
+
+              <p>
+                You will pay the delivery partner when your order
+                is delivered.
+              </p>
+
+            </div>
+
+          </div>
+
+
+
+          <!-- ================= BILLING ================= -->
+
+          <div class="checkout-card">
+
+            <div class="checkout-card-header">
+
+              <div class="step-number">4</div>
+
+              <div>
+                <h2>Billing Address</h2>
+                <p>Where should we send your invoice?</p>
+              </div>
+
+            </div>
+
+
+            <label class="checkbox-option">
+
+              <input
+                type="checkbox"
+                name="sameBilling"
+                checked
+              >
+
+              <span>
+                Billing address is the same as delivery address
+              </span>
+
+            </label>
+
+          </div>
+
+
+        </div>
+
+
+
+        <!-- =================================================
+             RIGHT SIDE - ORDER SUMMARY
+        ================================================== -->
+
+        <aside class="checkout-sidebar">
+
+          <div class="summary-card">
+
+            <div class="summary-header">
+
+              <h2>Your Order</h2>
+
+              <span>
+                {{cartCount}} items
+              </span>
+
+            </div>
+
+
+
+            <!-- PRODUCTS -->
+
+            {{#each cart}}
+
+            <div class="cart-product">
+
+              <div class="product-image">
+
+                <img
+                  src="{{this.image}}"
+                  alt="{{this.name}}"
+                >
+
+                <span class="product-quantity">
+                  {{this.quantity}}
+                </span>
+
+              </div>
+
+
+              <div class="product-info">
+
+                <strong>
+                  {{this.name}}
+                </strong>
+
+                {{#if this.variant}}
+                  <span>
+                    {{this.variant}}
+                  </span>
+                {{/if}}
+
+                <small>
+                  ₹{{this.price}}
+                </small>
+
+              </div>
+
+            </div>
+
+            {{/each}}
+
+
+
+            <!-- COUPON -->
+
+            <div class="coupon-box">
+
+              <label>
+                Discount Code
+              </label>
+
+              <div class="coupon-input">
+
+                <input
+                  type="text"
+                  name="coupon"
+                  placeholder="Enter code"
+                >
+
+                <button type="button">
+                  Apply
+                </button>
+
+              </div>
+
+            </div>
+
+
+
+            <!-- PRICE -->
+
+            <div class="price-summary">
+
+              <div class="price-row">
+
+                <span>Subtotal</span>
+
+                <strong>
+                  ₹{{total}}
+                </strong>
+
+              </div>
+
+
+              <div class="price-row">
+
+                <span>Delivery</span>
+
+<strong id="deliveryRowCharge">₹200</strong>
+
+
+
+              </div>
+
+
+
+
+              </div>
+
+
+              {{#if discount}}
+
+              <div class="price-row discount-row">
+
+                <span>Discount</span>
+
+                <strong>
+                  - ₹{{discount}}
+                </strong>
+
+              </div>
+
+              {{/if}}
+
+
+              <div class="price-total">
+
+                <span>Total</span>
+
+
+                <strong id="totalAmount">₹{{D1total}}
+                </strong>
+
+              </div>
+
+            </div>
+
+
+
+            <!-- SECURE -->
+
+            <div class="secure-checkout">
+
+              <span class="secure-icon">
+                🔒
+              </span>
+
+              <div>
+
+                <strong>
+                  Secure Checkout
+                </strong>
+
+                <p>
+                  Your payment information is encrypted
+                  and secure.
+                </p>
+
+              </div>
+
+            </div>
+
+
+
+            <!-- PLACE ORDER -->
+
+            <button
+              type="submit"
+              class="place-order-btn"
+            >
+
+              Place Order
+
+              <span>
+                →
+              </span>
+
+            </button>
+
+
+            <p class="terms-text">
+
+              By placing your order, you agree to our
+              <a href="/terms">
+                Terms & Conditions
+              </a>
+              and
+              <a href="/privacy">
+                Privacy Policy
+              </a>.
+
+            </p>
+
+          </div>
+
+        </aside>
+
+      </div>
+
+    </form>
+
+  </div>
+
+</section>
+
+
+<script>
+
+let cartSubtotal = 0;
+
+function selectDelivery(type) {
+
+  const charge = type === 'express' ? 150 : 200;
+
+  if (!cartSubtotal) {
+
+    cartSubtotal = parseInt(document.getElementById('totalAmount').textContent.replace(/[^0-9]/g, ''), 10) - 200;
+  }
+
+  document.getElementById('deliveryCharge').textContent = "₹" + charge;
+
+  document.getElementById('deliveryRowCharge').textContent = "₹" + charge;
+
+  document.getElementById('totalAmount').textContent = "₹" + (cartSubtotal + charge);
+}
+
+function showPayment(type) {
+
+  document.getElementById("cardPayment").style.display = "none";
+
+  document.getElementById("upiPayment").style.display = "none";
+
+  document.getElementById("codPayment").style.display = "none";
+
+
+  if (type === "card") {
+
+    document.getElementById("cardPayment").style.display = "block";
+
+  }
+
+  if (type === "upi") {
+
+    document.getElementById("upiPayment").style.display = "block";
+
+  }
+
+  if (type === "cod") {
+
+    document.getElementById("codPayment").style.display = "block";
+
+  }
+
+}
+
+</script>

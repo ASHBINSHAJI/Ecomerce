@@ -1,0 +1,234 @@
+<!-- ADD PRODUCT SECTION -->
+
+<section
+  class="py-5 bg-light mt-5 rounded-4"
+  style="margin: 0 ; padding-left: 20px; padding-right:24px"
+>
+
+  <div class="container">
+
+    <!-- Page Header -->
+    <div class="mb-4">
+
+      <h2 class="fw-bold mb-1">
+        Add New Product
+      </h2>
+
+      <p class="text-muted">
+        Add a new electronic or robotic component to your store.
+      </p>
+
+    </div>
+
+    <!-- Product Form -->
+    <div class="card border-0 shadow-sm">
+
+      <div class="card-body p-4 p-md-5">
+
+        <form
+          action="/admin/add-products"
+          method="POST"
+          enctype="multipart/form-data"
+        >
+
+          <div class="row g-4">
+
+            <!-- Product Name -->
+            <div class="col-12">
+
+              <label for="name" class="form-label fw-semibold">
+                Product Name
+              </label>
+
+              <input
+                type="text"
+                class="form-control"
+                id="name"
+                name="name"
+                placeholder="Example: Arduino Uno R3"
+                required
+              />
+
+            </div>
+
+            <!-- Description -->
+            <div class="col-12">
+
+              <label for="description" class="form-label fw-semibold">
+                Product Description
+              </label>
+
+              <textarea
+                class="form-control"
+                id="description"
+                name="description"
+                rows="5"
+                placeholder="Describe the product, specifications, features, etc."
+                required
+              ></textarea>
+
+            </div>
+
+            <!-- Price -->
+            <div class="col-md-6">
+
+              <label for="price" class="form-label fw-semibold">
+                Price
+              </label>
+
+              <div class="input-group">
+
+                <span class="input-group-text">
+                  ₹
+                </span>
+
+                <input
+                  type=""
+                  class="form-control"
+                  id="price"
+                  name="price"
+                  placeholder="499"
+                  value="₹"
+                  min="0"
+                  step="0.01"
+                  required
+                />
+
+              </div>
+
+            </div>
+
+            <!-- Stock -->
+            <div class="col-md-6">
+
+              <label for="stock" class="form-label fw-semibold">
+                Stock Quantity
+              </label>
+
+              <input
+                type="number"
+                class="form-control"
+                id="stock"
+                name="stock"
+                placeholder="100"
+                min="0"
+                required
+              />
+
+            </div>
+
+            <!-- Category -->
+            <div class="col-md-6">
+
+              <label for="category" class="form-label fw-semibold">
+                Category
+              </label>
+
+              <select
+                class="form-select"
+                id="category"
+                name="category"
+                required
+              >
+
+                <option value="" selected disabled>
+                  Select category
+                </option>
+
+                <option value="microcontrollers">
+                  Microcontrollers
+                </option>
+
+                <option value="sensors">
+                  Sensors
+                </option>
+
+                <option value="robotics">
+                  Robotics
+                </option>
+
+                <option value="motors">
+                  Motors & Drivers
+                </option>
+
+                <option value="development-boards">
+                  Development Boards
+                </option>
+
+                <option value="components">
+                  Electronic Components
+                </option>
+
+                <option value="modules">
+                  Modules
+                </option>
+
+                <option value="accessories">
+                  Accessories
+                </option>
+
+              </select>
+
+            </div>
+
+            <!-- Product Image -->
+            <div class="col-md-6">
+
+              <label for="image" class="form-label fw-semibold">
+                Product Image
+              </label>
+
+              <input
+                type="file"
+                class="form-control"
+                name="image"
+                accept="image/png, image/jpeg, image/webp"
+              />
+
+              <div class="form-text">
+                PNG, JPG or WEBP
+              </div>
+
+            </div>
+
+            <!-- Divider -->
+            <div class="col-12">
+
+              <hr />
+
+            </div>
+
+            <!-- Submit -->
+            <div class="col-12">
+
+              <div class="d-flex flex-column flex-sm-row gap-2">
+
+                <button type="submit" class="btn btn-primary px-4">
+
+                  <i class="bi bi-plus-lg me-1"></i>
+
+                  Add Product
+
+                </button>
+
+                <button type="reset" class="btn btn-outline-secondary px-4">
+
+                  Clear
+
+                </button>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </form>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>

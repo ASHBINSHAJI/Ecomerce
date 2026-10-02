@@ -1,0 +1,286 @@
+<div class="container py-4">
+
+  <div class="d-flex justify-content-between align-items-center mb-4">
+    <div>
+      <h2 class="fw-bold mb-1">Edit Product</h2>
+      <p class="text-muted mb-0">Update product information</p>
+    </div>
+
+    <a href="/admin" class="btn btn-outline-secondary">
+      <i class="bi bi-arrow-left"></i> Back
+    </a>
+  </div>
+
+  <form action="/admin/edit-product/{{product._id}}" method="POST" enctype="multipart/form-data">
+
+    <div class="row g-4">
+
+      <!-- Left Side -->
+      <div class="col-lg-8">
+
+        <div class="card border-0 shadow-sm">
+          <div class="card-body p-4">
+
+            <h5 class="fw-bold mb-4">Basic Information</h5>
+
+            <!-- Product Name -->
+            <div class="mb-3">
+              <label class="form-label fw-semibold">
+                Product Name
+              </label>
+
+              <input
+                type="text"
+                name="name"
+                class="form-control"
+                value="{{product.name}}"
+                placeholder="Enter product name"
+                required
+              >
+            </div>
+
+            <!-- Description -->
+            <div class="mb-3">
+              <label class="form-label fw-semibold">
+                Description
+              </label>
+
+              <textarea
+                name="description"
+                class="form-control"
+                rows="6"
+                placeholder="Enter product description"
+                required
+              >{{product.description}}</textarea>
+            </div>
+
+            <!-- Category + Brand -->
+            <div class="row">
+
+              <div class="col-md-6 mb-3">
+                <label class="form-label fw-semibold">
+                  {{product.categorey}}
+                </label>
+
+                <select name="category" class="form-select" required>
+                  <option value="">Select category</option>
+
+                  <option value="electronics"
+                   selected>
+                    Electronics
+                  </option>
+
+                  <option value="robotics"
+                 selected>
+                    Robotics
+                  </option>
+
+                  <option value="components"
+                    selected>
+                    Components
+                  </option>
+                </select>
+              </div>
+
+              <div class="col-md-6 mb-3">
+                <label class="form-label fw-semibold">
+                  Brand
+                </label>
+
+                <input
+                  type="text"
+                  name="brand"
+                  class="form-control"
+                  value="{{product.brand}}"
+                  placeholder="Enter brand"
+                >
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+
+        <!-- Pricing -->
+        <div class="card border-0 shadow-sm mt-4">
+          <div class="card-body p-4">
+
+            <h5 class="fw-bold mb-4">Pricing & Inventory</h5>
+
+            <div class="row">
+
+              <div class="col-md-4 mb-3">
+                <label class="form-label fw-semibold">
+                  Price
+                </label>
+
+                <div class="input-group">
+                  <span class="input-group-text">₹</span>
+
+                  <input
+                    type="text"
+                    name="price"
+                    class="form-control"
+                     value="₹{{stripCurrency product.price}}"
+                    min="0"
+                    required 
+                  >
+                  <p></p>
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-3">
+                <label class="form-label fw-semibold">
+                  Discount Price
+                </label>
+
+                <div class="input-group">
+                  <span class="input-group-text">₹</span>
+
+                  <input
+                    type="number"
+                    name="discountPrice"
+                    class="form-control"
+                    value="{{product.discountPrice}}"
+                    min="0"
+                  >
+                </div>
+              </div>
+
+              <div class="col-md-4 mb-3">
+                <label class="form-label fw-semibold">
+                  Stock
+                </label>
+
+                <input
+                  type="number"
+                  name="stock"
+                  class="form-control"
+                  value="{{product.stock}}"
+                  min="0"
+                  required
+                >
+              </div>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- Right Side -->
+      <div class="col-lg-4">
+
+        <!-- Image -->
+        <div class="card border-0 shadow-sm">
+          <div class="card-body p-4">
+
+            <h5 class="fw-bold mb-4">Product Image</h5>
+
+            <!-- Existing Image -->
+            <div class="text-center mb-3">
+
+              <img
+                src="/product-images/{{product._id}}.jpg"
+                id="imgView"
+                class="img-fluid rounded border"
+                style="max-height: 250px; object-fit: contain;"
+                alt="{{product.name}}"
+              >
+
+            </div>
+
+            <label class="form-label fw-semibold">
+              Change Image
+            </label>
+
+            <input
+              type="file"
+              name="image"
+              onchange="viewImage(event)"
+              class="form-control"
+              accept="image/*"
+            >
+
+            <small class="text-muted d-block mt-2">
+              Leave empty to keep the existing image.
+            </small>
+
+          </div>
+        </div>
+
+
+        <!-- Product Status -->
+        <div class="card border-0 shadow-sm mt-4">
+          <div class="card-body p-4">
+
+            <h5 class="fw-bold mb-3">Product Status</h5>
+
+            <div class="form-check form-switch">
+
+              <input
+                class="form-check-input"
+                type="checkbox"
+                name="status"
+                value="active"
+                id="status"
+              checked
+              >
+
+              <label class="form-check-label" for="status">
+                Active Product
+              </label>
+
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- Buttons -->
+    <div class="d-flex justify-content-between mt-4">
+
+      <button
+        type="button"
+        class="btn btn-outline-danger"
+        onclick="deleteProduct('{{product._id}}')"
+      >
+        <i class="bi bi-trash"></i>
+        Delete Product
+      </button>
+
+      <div class="d-flex gap-2">
+
+        <a
+          href="/admin" class="btn btn-outline-secondary"
+        >
+          Cancel
+        </a>
+
+        <button
+          type="submit"
+          class="btn btn-primary px-4"
+        >
+          <i class="bi bi-check-lg"></i>
+          Update Product
+        </button>
+
+      </div>
+
+    </div>
+
+  </form>
+
+</div>
+<script>
+    function viewImage(event){
+        document.getElementById('imgView').src=URL.createObjectURL(event.target.files[0])
+    }
+</script>

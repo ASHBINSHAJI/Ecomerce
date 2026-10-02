@@ -1,0 +1,61 @@
+<section class="checkout-page">
+  <div class="checkout-header">
+    <div class="checkout-container">
+      <h1>&#128179; Complete Payment</h1>
+      <p>Your order is pending — finish the payment to confirm it</p>
+    </div>
+  </div>
+
+  <div class="checkout-container">
+    <div class="checkout-grid">
+      <div class="checkout-main">
+        <div class="checkout-card">
+          <div class="checkout-card-header">
+            <div class="step-number">1</div>
+            <div>
+              <h2>Payment Details</h2>
+              <p>Pay using {{order.paymentMethod}}</p>
+            </div>
+          </div>
+
+          <div class="price-summary">
+            <div class="price-row">
+              <span>Order ID</span>
+              <strong>{{order.orderId}}</strong>
+            </div>
+            <div class="price-row">
+              <span>Status</span>
+              <strong>{{order.status}}</strong>
+            </div>
+            <div class="price-total">
+              <span>Amount to pay</span>
+              <strong>&#8377;{{order.total}}</strong>
+            </div>
+          </div>
+        </div>
+
+        <form action="/mid/pay/{{order.orderId}}" method="POST">
+          <button type="submit" class="place-order-btn">
+            Pay Now &#8377;{{order.total}}
+            <span>&#8594;</span>
+          </button>
+        </form>
+      </div>
+
+      <aside class="checkout-sidebar">
+        <div class="summary-card">
+          <div class="summary-header">
+            <h2>Secure Checkout</h2>
+          </div>
+          <div class="secure-checkout">
+            <span class="secure-icon">&#128274;</span>
+            <div>
+              <strong>Your payment is processed securely</strong>
+              <p>Thank you for shopping with us.</p>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </div>
+</section>

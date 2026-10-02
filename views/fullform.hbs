@@ -1,0 +1,313 @@
+<div class="container py-5">
+
+    <!-- Product Main Section -->
+    <div class="row g-5">
+
+        <!-- Product Images -->
+        <div class="col-lg-6">
+
+            <div class="border rounded-4 p-4 text-center bg-white">
+
+                <img 
+                    src="{{product.image}}"
+                    alt="{{product.name}}"
+                    class="img-fluid"
+                    style="height: 450px; width: 100%; object-fit: contain;"
+                >
+
+            </div>
+
+            <!-- Small Images -->
+            <div class="row g-2 mt-3">
+
+                <div class="col-3">
+                    <div class="border rounded-3 p-2 text-center">
+                        <img 
+                            src="{{product.image}}"
+                            class="img-fluid"
+                            style="height: 90px; object-fit: contain;"
+                        >
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="border rounded-3 p-2 text-center">
+                        <img 
+                            src="{{product.image}}"
+                            class="img-fluid"
+                            style="height: 90px; object-fit: contain;"
+                        >
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="border rounded-3 p-2 text-center">
+                        <img 
+                            src="{{product.image}}"
+                            class="img-fluid"
+                            style="height: 90px; object-fit: contain;"
+                        >
+                    </div>
+                </div>
+
+                <div class="col-3">
+                    <div class="border rounded-3 p-2 text-center">
+                        <img 
+                            src="{{product.image}}"
+                            class="img-fluid"
+                            style="height: 90px; object-fit: contain;"
+                        >
+                    </div>
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- Product Information -->
+        <div class="col-lg-6">
+
+            <span class="badge bg-light text-dark border mb-3">
+                Electronics
+            </span>
+
+            <h1 class="fw-bold mb-3">
+                {{product.name}}
+            </h1>
+
+            <div class="d-flex align-items-center gap-2 mb-3">
+
+                <span class="text-warning fs-5">
+                    ★★★★★
+                </span>
+
+                <span class="text-muted">
+                    4.5 (128 Reviews)
+                </span>
+
+            </div>
+
+            <h2 class="fw-bold mb-3">
+                ₹{{product.price}}
+            </h2>
+
+            <p class="text-success fw-semibold mb-4">
+                ✓ In Stock
+            </p>
+
+            <p class="text-muted mb-4">
+                {{product.description}}
+            </p>
+
+
+            <!-- Quantity -->
+            <div class="mb-4">
+
+                <label class="fw-semibold mb-2">
+                    Quantity
+                </label>
+
+                <div class="input-group" style="width: 140px;">
+
+                    <button class="btn btn-outline-secondary">
+                        −
+                    </button>
+
+                    <input 
+                        type="text"
+                        class="form-control text-center"
+                        value="1"
+                    >
+
+                    <button class="btn btn-outline-secondary">
+                        +
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- Buttons -->
+            <div class="d-flex gap-3 mb-4">
+
+                <button class="btn btn-dark btn-lg px-4">
+                    Add to Cart
+                </button>
+
+                <button class="btn btn-primary btn-lg px-4">
+                    Buy Now
+                </button>
+
+            </div>
+
+
+            <!-- Extra Information -->
+            <div class="border-top pt-4">
+
+                <div class="d-flex justify-content-between py-2">
+                    <span class="text-muted">
+                        Delivery
+                    </span>
+
+                    <strong>
+                        Available
+                    </strong>
+                </div>
+
+                <div class="d-flex justify-content-between py-2">
+                    <span class="text-muted">
+                        Returns
+                    </span>
+
+                    <strong>
+                        7 Days
+                    </strong>
+                </div>
+
+                <div class="d-flex justify-content-between py-2">
+                    <span class="text-muted">
+                        Payment
+                    </span>
+
+                    <strong>
+                        Secure Payment
+                    </strong>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- Description -->
+    <div class="mt-5 pt-5 border-top">
+
+        <h3 class="fw-bold mb-4">
+            Product Description
+        </h3>
+
+        <p class="text-muted lh-lg">
+            {{product.description}}
+        </p>
+
+    </div>
+
+
+    <!-- Specifications -->
+    <div class="mt-5">
+
+        <h3 class="fw-bold mb-4">
+            Specifications
+        </h3>
+
+        <div class="table-responsive">
+
+            <table class="table table-bordered">
+
+                <tbody>
+
+                    <tr>
+                        <th style="width: 30%;">
+                            Brand
+                        </th>
+
+                        <td>
+                            {{product.brand}}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            Category
+                        </th>
+
+                        <td>
+                            {{product.category}}
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            Product Type
+                        </th>
+
+                        <td>
+                            Electronics
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <th>
+                            Availability
+                        </th>
+
+                        <td>
+                            In Stock
+                        </td>
+                    </tr>
+
+                </tbody>
+
+            </table>
+
+        </div>
+
+    </div>
+
+
+    <!-- What's Included -->
+    <div class="mt-5">
+
+        <h3 class="fw-bold mb-4">
+            What's Included
+        </h3>
+
+        <ul class="list-group">
+
+            <li class="list-group-item">
+                Product
+            </li>
+
+            <li class="list-group-item">
+                USB Cable
+            </li>
+
+            <li class="list-group-item">
+                User Documentation
+            </li>
+
+        </ul>
+
+    </div>
+
+
+    <!-- Reviews -->
+    <div class="mt-5 pt-5 border-top">
+
+        <h3 class="fw-bold mb-4">
+            Customer Reviews
+        </h3>
+
+        <div class="border rounded-3 p-4">
+
+            <div class="text-warning mb-2">
+                ★★★★★
+            </div>
+
+            <h6 class="fw-bold">
+                Great Product
+            </h6>
+
+            <p class="text-muted mb-0">
+                Good quality product and works exactly as expected.
+            </p>
+
+        </div>
+
+    </div>
+
+</div>
